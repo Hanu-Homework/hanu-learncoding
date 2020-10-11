@@ -1,45 +1,27 @@
 import React from "react";
-import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Blog from "./Views/Blog/Blog";
-import Courses from "./Views/Courses/Courses";
-import Discuss from "./Views/Discuss/Discuss";
-import Home from "./Views/Home";
-import SignIn from "./Views/NewUser/SignIn";
-import Signup from "./Views/NewUser/Signup";
-import Profile from "./Views/Profile/Profile";
-import TopLearner from "./Views/TopLearner/TopLearner";
-import DesktopAppBar from "./Components/AppBarDesktop";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import ExpandedAppBar from "./CommonComponents/ExpandedAppBar";
+import routeTree from "./Routes";
 
 const App: React.FC<any> = () => {
   return (
     <Router>
-      <DesktopAppBar />
+      <ExpandedAppBar />
       <React.Fragment>
         <Switch>
-          <Route path="/signin">
-            <SignIn />
+          {routeTree.content.map((route) => {
+            return <Route path={route.path}>{route.component}</Route>;
+          })}
+          <Route path={routeTree.auth.signIn.path}>
+            {routeTree.auth.signIn.component}
           </Route>
-          <Route path="/signup">
-            <Signup />
+          <Route path={routeTree.auth.signUp.path}>
+            {routeTree.auth.signUp.component}
           </Route>
-          <Route path="/courses">
-            <Courses />
+          <Route path={routeTree.auth.profile.path}>
+            {routeTree.auth.profile.component}
           </Route>
-          <Route path="/discuss">
-            <Discuss />
-          </Route>
-          <Route path="/top-learner">
-            <TopLearner />
-          </Route>
-          <Route path="/blog">
-            <Blog />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path={routeTree.home.path}>{routeTree.home.component}</Route>
         </Switch>
       </React.Fragment>
     </Router>

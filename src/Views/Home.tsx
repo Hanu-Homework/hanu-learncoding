@@ -1,7 +1,27 @@
+import { Container } from "@material-ui/core";
 import React from "react";
+import { connect, ConnectedProps } from "react-redux";
+import ThreeCoursesPreview from "../CommonComponents/Course/ThreeCoursesPreview";
+import { RootState } from "../redux/reducers";
 
-function Home() {
-  return <div>Home Hello</div>;
-}
+type Props = PropsFromRedux & {};
 
-export default Home;
+const Home: React.FC<Props> = ({ isLoggedIn }) => {
+  return (
+    <Container maxWidth="lg">
+      <ThreeCoursesPreview />
+    </Container>
+  );
+};
+
+const mapStateToProps = (state: RootState) => {
+  return {
+    isLoggedIn: state.user.isLoggedIn,
+  };
+};
+
+const connector = connect(mapStateToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+export default connector(Home);

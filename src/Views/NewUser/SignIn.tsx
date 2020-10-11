@@ -12,13 +12,18 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useHistory } from "react-router-dom";
+import routeTree from "../../Routes";
+import { RootState } from "../../redux/reducers";
+import { connect, ConnectedProps } from "react-redux";
+import { setAuthenticated } from "../../redux/actions/user/authentication";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Hanu Learn Coding
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -45,9 +50,20 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
+type Props = PropsFromRedux & {};
 
-export default function SignIn() {
+const SignIn: React.FC<Props> = ({ setLoggedIn }) => {
   const classes = useStyles();
+
+  const history = useHistory();
+
+  const onButtonClickRedirect = (
+    event: React.MouseEvent<HTMLElement>,
+    path: string
+  ) => {
+    event.preventDefault();
+    history.push(path);
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -92,6 +108,10 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={(e) => {
+              setLoggedIn(true);
+              onButtonClickRedirect(e, routeTree.home.path);
+            }}
           >
             Sign In
           </Button>
@@ -114,4 +134,22 @@ export default function SignIn() {
       </Box>
     </Container>
   );
-}
+};
+
+const mapStateToProps = (state: RootState) => {
+  return {
+    isLoggedIn: state.user.isLoggedIn,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    setLoggedIn: (isAuthenticated: boolean) => dispatch(setAuthenticated(true)),
+  };
+};
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+export default connector(SignIn);
