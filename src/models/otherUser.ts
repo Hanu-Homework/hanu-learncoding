@@ -1,5 +1,3 @@
-import Course from "./course/course";
-
 interface LeaderboardUser {
   name: string;
   mediaSrc: {
@@ -11,4 +9,4 @@ interface LeaderboardUser {
   };
 }
 
-export default LeaderBoardUser;
+export default LeaderboardUser;

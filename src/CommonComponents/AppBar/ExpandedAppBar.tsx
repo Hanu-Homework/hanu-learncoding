@@ -1,9 +1,9 @@
 import { Button, Grid, Link, makeStyles } from "@material-ui/core";
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
-import { RootState } from "../redux/reducers";
+import { RootState } from "../../redux/reducers";
 import { useHistory } from "react-router-dom";
-import routeTree from "../Routes";
+import routeTree from "../../Routes";
 
 type Props = PropsFromRedux & {};
 

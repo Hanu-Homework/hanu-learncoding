@@ -9,6 +9,7 @@ const theme = createMuiTheme({
   shape: {
     borderRadius: 50,
   },
+
   /* whatever else you want to add here */
 });
 

@@ -4,5 +4,4 @@ function sleep(ms: number) {
 
 export async function fetchCourses() {
   await sleep(1000);
-  return fakeCourses;
 }
