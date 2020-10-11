@@ -75,3 +75,7 @@ const mapDispatchToProps = (dispatch: any) => {
       dispatch(setDrawerOpened(isDrawerOpened)),
   };
 };
+
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+export default 
