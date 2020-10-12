@@ -1,9 +1,16 @@
+import { ThreadGroup } from "./../../../models/discussion/thread";
+import Thread from "../../../models/discussion/thread";
+
 interface IState {
-  threads: any[];
+  threads: Thread[];
+  threadOrder: ThreadGroup;
+  querySearchValue: string;
 }
 
 const initialState: IState = {
   threads: [],
+  threadOrder: "mostRecent",
+  querySearchValue: "",
 };
 
 type Actions = { type: ""; action: string };

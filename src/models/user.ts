@@ -1,4 +1,4 @@
-interface LeaderboardUser {
+interface User {
   name: string;
   mediaSrc: {
     avatar: string;
@@ -9,4 +9,4 @@ interface LeaderboardUser {
   };
 }
 
-export default LeaderboardUser;
+export default User;

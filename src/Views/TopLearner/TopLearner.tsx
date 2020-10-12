@@ -1,7 +1,15 @@
+import { Container } from "@material-ui/core";
 import React from "react";
+import LeaderBoard from "./LeaderBoard";
 
-function TopLearner() {
-  return <div>TopLearner</div>;
-}
+interface Props {}
 
-export default TopLearner;
+const TopLearners: React.FC<Props> = () => {
+  return (
+    <Container maxWidth="lg">
+      <LeaderBoard />
+    </Container>
+  );
+};
+
+export default TopLearners;

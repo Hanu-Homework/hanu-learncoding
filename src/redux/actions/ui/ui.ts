@@ -1,8 +1,8 @@
-import { SET_DRAWER_OPENED } from "../../actionTypes";
+import { TOGGLE_DRAWER_OPENED } from "../../actionTypes";
 
-export function setDrawerOpenend(isDrawerOpened: boolean) {
+export function setDrawerOpened(open: boolean) {
   return {
-    type: SET_DRAWER_OPENED,
-    isDrawerOpened: isDrawerOpened,
+    type: TOGGLE_DRAWER_OPENED,
+    open: open,
   };
 }

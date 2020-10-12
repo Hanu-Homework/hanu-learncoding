@@ -16,6 +16,9 @@ interface IRoute {
   component: () => JSX.Element;
   children?: IRoute[];
   child?: IRoute;
+  media: {
+    icon: string;
+  };
 }
 
 interface IRouteTree {
@@ -35,6 +38,9 @@ const routeTree: IRouteTree = {
     path: "/",
     isProtected: false,
     component: () => <Home />,
+    media: {
+      icon: "",
+    },
   },
   content: [
     {
@@ -43,6 +49,9 @@ const routeTree: IRouteTree = {
       path: "/courses",
       component: () => <Courses />,
       isProtected: true,
+      media: {
+        icon: "",
+      },
     },
     {
       parentPath: "/",
@@ -50,13 +59,19 @@ const routeTree: IRouteTree = {
       path: "/discuss",
       component: () => <Discuss />,
       isProtected: true,
+      media: {
+        icon: "",
+      },
     },
     {
       parentPath: "/",
       name: "Top Learners",
-      path: "/top-learners",
+      path: "/leaderboard",
       component: () => <TopLearners />,
       isProtected: true,
+      media: {
+        icon: "",
+      },
     },
     {
       parentPath: "/",
@@ -64,6 +79,9 @@ const routeTree: IRouteTree = {
       path: "/blog",
       component: () => <Blog />,
       isProtected: false,
+      media: {
+        icon: "",
+      },
     },
   ],
   auth: {
@@ -73,6 +91,9 @@ const routeTree: IRouteTree = {
       path: "/signin",
       component: () => <SignIn />,
       isProtected: false,
+      media: {
+        icon: "",
+      },
     },
     signUp: {
       parentPath: "/",
@@ -80,6 +101,9 @@ const routeTree: IRouteTree = {
       path: "/signup",
       component: () => <SignUp />,
       isProtected: false,
+      media: {
+        icon: "",
+      },
     },
     profile: {
       parentPath: "/",
@@ -87,6 +111,9 @@ const routeTree: IRouteTree = {
       path: "/profile",
       component: () => <Profile />,
       isProtected: true,
+      media: {
+        icon: "",
+      },
     },
   },
 };

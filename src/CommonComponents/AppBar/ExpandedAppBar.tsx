@@ -1,4 +1,4 @@
-import { Button, Grid, Link, makeStyles } from "@material-ui/core";
+import { Button, Container, Grid, Link, makeStyles } from "@material-ui/core";
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { RootState } from "../../redux/reducers";
@@ -8,10 +8,6 @@ import routeTree from "../../Routes";
 type Props = PropsFromRedux & {};
 
 const useStyles = makeStyles((theme) => ({
-  global: {
-    paddingLeft: "50%",
-    paddingRight: "50%",
-  },
   buttonFont: {
     fontWeight: 600,
     textTransform: "uppercase",
@@ -40,7 +36,7 @@ const ExpandedAppBar: React.FC<Props> = ({ isLoggedIn }) => {
   };
 
   return (
-    <div>
+    <Container maxWidth="lg">
       <Grid container spacing={2}>
         <Grid container item xs={3}>
           <Link href="/">
@@ -61,7 +57,6 @@ const ExpandedAppBar: React.FC<Props> = ({ isLoggedIn }) => {
             </Button>
           ))}
           <Button
-            style={{ marginRight: 50 }}
             className={`${classes.buttonFont} ${classes.button}`}
             color="primary"
             onClick={(e) =>
@@ -80,7 +75,7 @@ const ExpandedAppBar: React.FC<Props> = ({ isLoggedIn }) => {
           </Button>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -6,6 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { connect, ConnectedProps } from "react-redux";
+import { RootState } from "../../redux/reducers";
+import { setDrawerOpened } from "../../redux/actions/ui/ui";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +22,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MobileAppBar() {
+type Props = PropsFromRedux & {};
+
+const MobileAppBar: React.FC<Props> = ({ isDrawerOpened, setDrawerOpened }) => {
   const classes = useStyles();
 
   return (
@@ -31,15 +36,37 @@ export default function MobileAppBar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
+            onClick={() => {
+              console.log("clicked");
+              setDrawerOpened(!isDrawerOpened);
+            }}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            Endeavor
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
   );
-}
+};
+
+const mapStateToProps = (state: RootState) => {
+  return {
+    isDrawerOpened: state.ui.isDrawerOpened,
+  };
+};
+
+const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+  return {
+    setDrawerOpened: (open: boolean) => dispatch(setDrawerOpened(open)),
+  };
+};
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+export default connector(MobileAppBar);

@@ -1,11 +1,14 @@
 import React, { Dispatch } from "react";
 import clsx from "clsx";
-import { Router, Route, Link } from "react-router-dom";
-import { createBrowserHistory } from "history";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { Drawer, List, ListItem, ListItemText } from "@material-ui/core";
+import { Drawer, Icon, List, ListItem, ListItemText } from "@material-ui/core";
 import { RootState } from "../../redux/reducers";
+import { connect, ConnectedProps } from "react-redux";
+import routeTree from "../../Routes";
+import { setDrawerOpened } from "../../redux/actions/ui/ui";
+import ListItemIcon from "@material-ui/core/ListItemIcon/ListItemIcon";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,37 +30,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MyDrawer = ({ open, onClose, onItemClick }) => {
+type Props = PropsFromRedux & {};
+
+const CustomDrawer: React.FC<Props> = ({ isDrawerOpened, setOpen }) => {
   const classes = useStyles();
+
+  const history = useHistory();
+
+  const onClick = (path: string) => {
+    history.push(path);
+  };
+
+  console.log(isDrawerOpened);
+
   return (
     <Drawer
-      variant={variant}
-      open={open}
-      onClose={onClose}
+      variant="temporary"
+      open={isDrawerOpened}
+      onClose={() => setOpen(false)}
       classes={{
         paper: classes.drawerPaper,
       }}
     >
       <div
         className={clsx({
-          [classes.toolbarMargin]: variant === "persistent",
+          [classes.toolbarMargin]: true,
         })}
       />
       <List>
-        <ListItem button component={Link} to="/" onClick={onItemClick("Home")}>
+        <ListItem button onClick={() => onClick(routeTree.home.path)}>
           <ListItemText>Home</ListItemText>
         </ListItem>
-        <ListItem
-          button
-          component={Link}
-          to="/Grid"
-          onClick={onItemClick("Page 2")}
-        >
-          <ListItemText>Page 2</ListItemText>
-        </ListItem>
-        <ListItem button onClick={onItemClick("Page 3")}>
-          <ListItemText>Page 3</ListItemText>
-        </ListItem>
+        {routeTree.content.map((route) => {
+          return (
+            <ListItem button onClick={() => onClick(route.path)}>
+              <ListItemIcon>
+                <Icon>{route.media.icon}</Icon>
+              </ListItemIcon>
+              <ListItemText>{route.name}</ListItemText>
+            </ListItem>
+          );
+        })}
       </List>
     </Drawer>
   );
@@ -69,13 +82,14 @@ const mapStateToProps = (state: RootState) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: Dispatch<any>) => {
   return {
-    setDrawerOpened: (isDrawerOpened: boolean) =>
-      dispatch(setDrawerOpened(isDrawerOpened)),
+    setOpen: (open: boolean) => dispatch(setDrawerOpened(open)),
   };
 };
 
-const connector = connect(mapStateToProps, mapDispatchToProps)
+const connector = connect(mapStateToProps, mapDispatchToProps);
 
-export default 
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+export default connector(CustomDrawer);

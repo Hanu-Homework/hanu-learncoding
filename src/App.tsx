@@ -3,7 +3,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import routeTree from "./Routes";
 import ResponsiveAppBar from "./CommonComponents/AppBar/AppBar";
 
-const App: React.FC<any> = () => {
+const App: React.FC = () => {
   return (
     <Router>
       <ResponsiveAppBar />
