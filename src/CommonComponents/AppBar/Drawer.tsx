@@ -6,7 +6,7 @@ import { Drawer, Icon, List, ListItem, ListItemText } from "@material-ui/core";
 import { RootState } from "../../redux/reducers";
 import { connect, ConnectedProps } from "react-redux";
 import routeTree from "../../Routes";
-import { setDrawerOpened } from "../../redux/actions/ui/ui";
+import { toggleDrawerOpen } from "../../redux/actions/ui/ui";
 import ListItemIcon from "@material-ui/core/ListItemIcon/ListItemIcon";
 import { useHistory } from "react-router-dom";
 
@@ -84,7 +84,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
   return {
-    setOpen: (open: boolean) => dispatch(setDrawerOpened(open)),
+    setOpen: (open: boolean) => dispatch(toggleDrawerOpen()),
   };
 };
 

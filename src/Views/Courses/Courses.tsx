@@ -1,13 +1,21 @@
 import { Container } from "@material-ui/core";
 import React from "react";
-import CoursesGrid from "../../CommonComponents/Course/CoursesGrid";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
+import CourseLanding from "./Landing";
 
-function Courses() {
+const Courses: React.FC = () => {
+  const match = useRouteMatch();
+
   return (
     <Container maxWidth="lg">
-      <CoursesGrid />
+      <Switch>
+        <Route path={`${match.path}/:courseID`}></Route>
+        <Route path={match.path}>
+          <CourseLanding />
+        </Route>
+      </Switch>
     </Container>
   );
-}
+};
 
 export default Courses;

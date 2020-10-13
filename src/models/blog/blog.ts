@@ -7,12 +7,11 @@ type BlogType =
 
 interface BlogContentParagraph {
   value: string;
-  variant: string;
-  fontSize: number;
-  fontFamily: string;
+  isHeader: boolean;
 }
 
 interface Blog {
+  id: string;
   type: BlogType;
   postedAt: Date;
   approximatedReadingTime: number;

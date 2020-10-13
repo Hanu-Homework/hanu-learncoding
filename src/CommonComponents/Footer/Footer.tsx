@@ -1,175 +1,180 @@
+import {
+  Avatar,
+  Box,
+  Container,
+  Grid,
+  Link,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Paper,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
-import Container from "@material-ui/core/Container";
-import { TextField, Typography } from "@material-ui/core";
+import routeTree from "../../Routes";
+interface Props {}
 
-function Copyright() {
-  return (
-    <React.Fragment>
-      {"© "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-    </React.Fragment>
-  );
+interface Developer {
+  name: string;
+  role: string;
+  avatarSrc: string;
+}
+type SocialType = "facebook" | "qldt" | "hanu" | "fithanu";
+interface Social {
+  type: SocialType;
+  link: string;
+  name: string;
+  iconSrc: string;
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    backgroundColor: theme.palette.secondary.light,
-  },
-  container: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(8),
-    display: "flex",
-  },
-  iconsWrapper: {
-    height: 120,
-  },
-  icons: {
-    display: "flex",
-  },
-  icon: {
-    width: 48,
-    height: 48,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: theme.palette.warning.main,
-    marginRight: theme.spacing(1),
-    "&:hover": {
-      backgroundColor: theme.palette.warning.dark,
+const CustomFooter: React.FC<Props> = () => {
+  const members: Developer[] = [
+    {
+      name: "Đỗ Văn Hòa",
+      role: "Project Manager",
+      avatarSrc:
+        "https://scontent.fhan3-2.fna.fbcdn.net/v/t1.0-9/32231541_2032533817067363_2240034197454454784_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=GlJiyBMoMiIAX92pHyY&_nc_ht=scontent.fhan3-2.fna&oh=9d7f0d245ebb5eff0689fead3ba448e9&oe=5FA9FE65",
     },
-  },
-  list: {
-    margin: 0,
-    listStyle: "none",
-    padding: 0,
-  },
-  listItem: {
-    paddingTop: theme.spacing(0.5),
-    paddingBottom: theme.spacing(0.5),
-  },
-  language: {
-    marginTop: theme.spacing(1),
-    width: 150,
-  },
-}));
+    {
+      name: "Nguyễn Thùy Dương",
+      role: "System Architect",
+      avatarSrc:
+        "https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-9/120070323_1654441308072420_836793167068543965_n.jpg?_nc_cat=104&_nc_sid=8bfeb9&_nc_ohc=anT74qEnoaAAX9VQNad&_nc_ht=scontent.fhan4-1.fna&oh=7b862720da9aef4e69fa2a95116208ea&oe=5FA82259",
+    },
+    {
+      name: "Nguyễn Quốc Bảo",
+      role: "Software Engineer",
+      avatarSrc:
+        "https://scontent.fhan3-2.fna.fbcdn.net/v/t1.0-9/104111363_1338911162968900_3851317361686221959_o.jpg?_nc_cat=103&_nc_sid=a4a2d7&_nc_ohc=VrbuvxFMhY4AX9K8Jnr&_nc_ht=scontent.fhan3-2.fna&oh=48b60620c91cf01dc0a27073218dbfc9&oe=5FA818F9",
+    },
+    {
+      name: "Tăng Bá Minh",
+      role: "Intern",
+      avatarSrc:
+        "https://kenh14cdn.com/thumb_w/660/2020/9/8/photo-2-15995772922521570753570.jpg",
+    },
+  ];
 
-const LANGUAGES = [
-  {
-    code: "en-US",
-    name: "English",
-  },
-  {
-    code: "fr-FR",
-    name: "Français",
-  },
-];
-
-export default function AppFooter() {
-  const classes = useStyles();
-
+  const socials: Social[] = [
+    {
+      iconSrc:
+        "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/56208365_618343251942952_4594067817766060032_n.jpg?_nc_cat=102&_nc_sid=09cbfe&_nc_ohc=8bN1w2kOs-YAX9_Nj67&_nc_oc=AQkdotBzvBDDrcIYAAQfK0INMAwXavF8xwNCVIBWt8bWTKq64jlfc9zzx2fXyWH-WxM&_nc_ht=scontent.fhan3-1.fna&oh=64c97b45c4e97a1ec5b11b08c0a79440&oe=5FAAF0CF",
+      link: "https://www.facebook.com/khoacntt.hanu/",
+      name: "FIT Fanpage",
+      type: "facebook",
+    },
+    {
+      iconSrc:
+        "http://fit.hanu.vn/theme/image.php/essential/theme/1574932483/favicon",
+      link: "http://fit.hanu.vn/",
+      name: "Falcuty of Information Technology",
+      type: "fithanu",
+    },
+    {
+      iconSrc:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUQneaAzaMSD2DqZjJGiav29zSi2bSjocSFlh-atc&s=10",
+      link: "http://www.hanu.vn/",
+      name: "HANU University",
+      type: "hanu",
+    },
+    {
+      iconSrc: "http://qldt.hanu.vn/Images/Edusoft.gif",
+      link: "http://qldt.hanu.vn/",
+      name: "QLDT",
+      type: "qldt",
+    },
+  ];
   return (
-    <Typography component="footer" className={classes.root}>
-      <Container className={classes.container}>
-        <Grid container spacing={5}>
-          <Grid item xs={6} sm={4} md={3}>
+    <footer>
+      <Paper style={{ borderRadius: 0 }} elevation={3}>
+        <Container maxWidth="lg" style={{ padding: "25px" }}>
+          <Grid container spacing={4}>
             <Grid
               container
+              item
+              xs={12}
+              md={6}
+              lg={3}
               direction="column"
-              justify="flex-end"
-              className={classes.iconsWrapper}
-              spacing={2}
+              justify="flex-start"
+              alignItems="flex-start"
             >
-              <Grid item className={classes.icons}>
-                <a href="https://material-ui.com/" className={classes.icon}>
-                  <img
-                    src="/static/themes/onepirate/appFooterFacebook.png"
-                    alt="Facebook"
-                  />
-                </a>
-                <a
-                  href="https://twitter.com/MaterialUI"
-                  className={classes.icon}
-                >
-                  <img
-                    src="/static/themes/onepirate/appFooterTwitter.png"
-                    alt="Twitter"
-                  />
-                </a>
-              </Grid>
-              <Grid item>
-                <Copyright />
-              </Grid>
+              <Link href="/">
+                <img
+                  src={window.location.origin + "/LearnCodingLogo.png"}
+                  alt={"Logo"}
+                />
+              </Link>
+              <Box mb={2} />
+              <Typography component="div">
+                A project for the System Architecture Design course
+              </Typography>
+            </Grid>
+            <Grid
+              container
+              item
+              xs={12}
+              md={6}
+              lg={3}
+              direction="column"
+              justify="flex-start"
+              alignItems="flex-start"
+            >
+              <Typography variant="h5">Menu</Typography>
+              <List>
+                {routeTree.content.map((route) => {
+                  return (
+                    <ListItem button component="a" href={route.path}>
+                      <ListItemAvatar>
+                        <Avatar alt={route.name} src={route.media.icon} />
+                      </ListItemAvatar>
+                      <ListItemText primary={route.name} />
+                    </ListItem>
+                  );
+                })}
+              </List>
+            </Grid>
+            <Grid container item xs={12} md={6} lg={3} direction="column">
+              <Typography variant="h5" component="div">
+                Developers
+              </Typography>
+              <List>
+                {members.map((member) => {
+                  return (
+                    <ListItem>
+                      <ListItemAvatar>
+                        <Avatar alt={member.name} src={member.avatarSrc} />
+                      </ListItemAvatar>
+                      <ListItemText
+                        primary={member.name}
+                        secondary={member.role}
+                      />
+                    </ListItem>
+                  );
+                })}
+              </List>
+            </Grid>
+            <Grid container item xs={12} md={6} lg={3} direction="column">
+              <Typography variant="h5">Connect</Typography>
+              <List>
+                {socials.map((social) => {
+                  return (
+                    <ListItem button component="a" href={social.link}>
+                      <ListItemAvatar>
+                        <Avatar alt={social.name} src={social.iconSrc} />
+                      </ListItemAvatar>
+                      <ListItemText primary={social.name} />
+                    </ListItem>
+                  );
+                })}
+              </List>
             </Grid>
           </Grid>
-          <Grid item xs={6} sm={4} md={2}>
-            <Typography variant="h6" gutterBottom>
-              Legal
-            </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/terms/">Terms</Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
-              </li>
-            </ul>
-          </Grid>
-          <Grid item xs={6} sm={8} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Language
-            </Typography>
-            <TextField
-              select
-              SelectProps={{
-                native: true,
-              }}
-              className={classes.language}
-            >
-              {LANGUAGES.map((language) => (
-                <option value={language.code} key={language.code}>
-                  {language.name}
-                </option>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item>
-            <Typography variant="caption">
-              {"Icons made by "}
-              <Link
-                href="https://www.freepik.com"
-                rel="sponsored"
-                title="Freepik"
-              >
-                Freepik
-              </Link>
-              {" from "}
-              <Link
-                href="https://www.flaticon.com"
-                rel="sponsored"
-                title="Flaticon"
-              >
-                www.flaticon.com
-              </Link>
-              {" is licensed by "}
-              <Link
-                href="https://creativecommons.org/licenses/by/3.0/"
-                title="Creative Commons BY 3.0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CC 3.0 BY
-              </Link>
-            </Typography>
-          </Grid>
-        </Grid>
-      </Container>
-    </Typography>
+        </Container>
+      </Paper>
+    </footer>
   );
-}
+};
+
+export default CustomFooter;

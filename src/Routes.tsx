@@ -1,5 +1,4 @@
 import React from "react";
-import Courses from "./Views/Courses/Courses";
 import Discuss from "./Views/Discuss/Discuss";
 import TopLearners from "./Views/TopLearner/TopLearner";
 import Blog from "./Views/Blog/Blog";
@@ -7,6 +6,7 @@ import SignUp from "./Views/NewUser/Signup";
 import SignIn from "./Views/NewUser/SignIn";
 import Home from "./Views/Home";
 import Profile from "./Views/Profile/Profile";
+import Courses from "./Views/Courses/Courses";
 
 interface IRoute {
   parentPath?: string;
@@ -48,6 +48,16 @@ const routeTree: IRouteTree = {
       name: "Courses",
       path: "/courses",
       component: () => <Courses />,
+      isProtected: true,
+      media: {
+        icon: "",
+      },
+    },
+    {
+      parentPath: "/",
+      name: "Compete",
+      path: "/compete",
+      component: () => <div></div>,
       isProtected: true,
       media: {
         icon: "",

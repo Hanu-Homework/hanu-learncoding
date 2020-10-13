@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
+import { useHistory, useRouteMatch } from "react-router-dom";
 import Blog from "../../models/blog/blog";
 
 interface Props {
@@ -15,15 +16,21 @@ interface Props {
 }
 
 const BlogCard: React.FC<Props> = ({ blog }) => {
+  const history = useHistory();
+  const match = useRouteMatch();
+
+  const handleClick = (e: any) => {
+    history.push(`${match.url}/${blog.id}`);
+  };
   return (
-    <Card elevation={4} style={{ borderRadius: 16 }}>
+    <Card elevation={4} style={{ borderRadius: 16 }} onClick={handleClick}>
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
+          alt={blog.title}
           height="200"
-          image="https://api.sololearn.com/Uploads/The_Influence_of_Data_Science_in_Elections__Blog_1.jpg"
-          title="Contemplative Reptile"
+          image={blog.media.desImgSrc}
+          title={blog.title}
         />
         <CardContent style={{ padding: "25px" }}>
           <Grid container>

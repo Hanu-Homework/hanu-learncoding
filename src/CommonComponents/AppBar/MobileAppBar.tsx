@@ -8,7 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { connect, ConnectedProps } from "react-redux";
 import { RootState } from "../../redux/reducers";
-import { setDrawerOpened } from "../../redux/actions/ui/ui";
+import { toggleDrawerOpen } from "../../redux/actions/ui/ui";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,7 +61,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
   return {
-    setDrawerOpened: (open: boolean) => dispatch(setDrawerOpened(open)),
+    setDrawerOpened: (open: boolean) => dispatch(toggleDrawerOpen()),
   };
 };
 

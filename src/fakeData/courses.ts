@@ -3,7 +3,19 @@ import Course from "../models/course/course";
 const fakeCourses: Course[] = [
   {
     id: "python",
-    modules: [],
+    modules: [
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+    ],
     name: "Python 3",
     numberOfLearners: 6913359,
     numberOfLessons: 88,

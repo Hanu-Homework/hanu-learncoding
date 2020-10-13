@@ -1,4 +1,4 @@
-import { Container } from "@material-ui/core";
+import { Box, Container } from "@material-ui/core";
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import ThreeCoursesPreview from "../CommonComponents/Course/ThreeCoursesPreview";
@@ -9,6 +9,7 @@ type Props = PropsFromRedux & {};
 const Home: React.FC<Props> = ({ isLoggedIn }) => {
   return (
     <Container maxWidth="lg">
+      <Box mb={5} />
       <ThreeCoursesPreview />
     </Container>
   );

@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 15,
   },
   button: {
-    margin: "auto 10px",
+    margin: "auto 0",
+    marginLeft: "5px",
     borderRadius: 50,
-    padding: "10px 30px",
+    padding: "10px 25px",
     clear: "both",
-    height: "50%",
   },
 }));
 
@@ -37,7 +37,7 @@ const ExpandedAppBar: React.FC<Props> = ({ isLoggedIn }) => {
 
   return (
     <Container maxWidth="lg">
-      <Grid container spacing={2}>
+      <Grid container spacing={0} style={{ padding: "25px" }}>
         <Grid container item xs={3}>
           <Link href="/">
             <img

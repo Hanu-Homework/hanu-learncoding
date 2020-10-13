@@ -1,3 +1,3 @@
-const fakeUsers: any[] = [];
+const fakeLeaderboardUsers: any[] = [];
 
-export default fakeUsers;
+export default fakeLeaderboardUsers;
