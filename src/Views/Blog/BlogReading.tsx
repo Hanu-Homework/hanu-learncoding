@@ -1,5 +1,5 @@
 import { Container, Typography } from "@material-ui/core";
-import React, { Fragment } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import fakeBlogs from "../../fakeData/blogs";
 import Blog from "../../models/blog/blog";

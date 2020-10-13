@@ -12,6 +12,103 @@ const fakeCourses: Course[] = [
             name: "Welcome To Python",
             numberOfQuizzes: 3,
           },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
         ],
         name: "Basic Concepts",
       },
@@ -29,7 +126,116 @@ const fakeCourses: Course[] = [
   },
   {
     id: "python",
-    modules: [],
+    modules: [
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+    ],
     name: "Python 3",
     numberOfLearners: 6913359,
     numberOfLessons: 88,
@@ -43,7 +249,239 @@ const fakeCourses: Course[] = [
   },
   {
     id: "python",
-    modules: [],
+    modules: [
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+    ],
+    name: "Python 3",
+    numberOfLearners: 6913359,
+    numberOfLessons: 88,
+    numberOfQuizzes: 271,
+    shortDescription:
+      "Learn Python, one of today's most in-demand programming languages on-the-go! Practice writing Python code, collect points, & show off your skills now!",
+    mediaSrc: {
+      icon: "https://www.sololearn.com/Icons/Courses/1073.png",
+      image: "https://www.sololearn.com/Images/home-new/1073.png",
+    },
+  },
+  {
+    id: "python",
+    modules: [
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+      {
+        id: "1",
+        lessons: [
+          {
+            id: "1",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "2",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "3",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "4",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "5",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+          {
+            id: "6",
+            name: "Welcome To Python",
+            numberOfQuizzes: 3,
+          },
+        ],
+        name: "Basic Concepts",
+      },
+    ],
     name: "Python 3",
     numberOfLearners: 6913359,
     numberOfLessons: 88,

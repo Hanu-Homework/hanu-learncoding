@@ -32,7 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
 const HotNewsCard: React.FC<Props> = () => {
   const classes = useStyles();
   return (
-    <Paper style={{ borderRadius: 16, padding: "20px" }}>
+    <Paper
+      style={{ borderRadius: 16, padding: "20px", display: "inline-block" }}
+    >
       <Typography variant="h6">Hot Today</Typography>
       <Box mb={3} />
       <Divider />

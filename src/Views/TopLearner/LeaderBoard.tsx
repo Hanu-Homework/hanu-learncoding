@@ -1,5 +1,5 @@
-import { Paper } from "@material-ui/core";
-import React, { Dispatch } from "react";
+import { Paper, Typography } from "@material-ui/core";
+import React, { Dispatch, Fragment } from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { RootState } from "../../redux/reducers";
 
@@ -7,7 +7,18 @@ type Props = PropsFromRedux & {};
 
 const LeaderBoardCard: React.FC<Props> = () => {
   return (
-    <Paper style={{ borderRadius: 16, padding: "25px" }}>LeaderBoardCard</Paper>
+    <Fragment>
+      <Typography
+        variant="h4"
+        style={{ textAlign: "center", marginBottom: "25px" }}
+      >
+        Leaderboard
+      </Typography>
+
+      <Paper style={{ borderRadius: 16, padding: "25px" }}>
+        LeaderBoardCard
+      </Paper>
+    </Fragment>
   );
 };
 

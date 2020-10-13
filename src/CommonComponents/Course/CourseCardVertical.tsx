@@ -54,6 +54,7 @@ const CourseCardVertical: React.FC<Props> = ({ course }) => {
       <CardActions>
         <div style={{ margin: "auto", marginBottom: "20px" }}>
           <Button
+            href={`courses/${course.id}`}
             size="small"
             color="primary"
             variant="contained"
