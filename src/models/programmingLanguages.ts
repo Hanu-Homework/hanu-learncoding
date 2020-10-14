@@ -1,4 +1,4 @@
-type ProgrammingLanguages =
+export type SupportedProgrammingLanguageTypes =
   | "html"
   | "js"
   | "cpp"
@@ -9,4 +9,9 @@ type ProgrammingLanguages =
   | "rb"
   | "c";
 
-export default ProgrammingLanguages;
+interface ProgrammingLanguage {
+  id: string;
+  name: string;
+  iconUrl: string;
+}
+export default ProgrammingLanguage;

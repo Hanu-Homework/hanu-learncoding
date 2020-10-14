@@ -1,4 +1,4 @@
-import fakeLeaderboardUsers from "../fakeData/users";
+import fakeOtherUsers from "../fakeData/users/users";
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -7,5 +7,5 @@ function sleep(ms: number) {
 export async function fetchLeaderboardUsers() {
   await sleep(1000);
 
-  return fakeLeaderboardUsers;
+  return fakeOtherUsers;
 }

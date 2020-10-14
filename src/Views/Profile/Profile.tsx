@@ -1,18 +1,18 @@
-import { Container, Grid, Paper } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import React from "react";
 import DetailedInformation from "./DetailedInformation";
 import ShortIntroduction from "./ShortIntroduction";
-// import currentUser from "../../fakeData/currentUser";
+import currentUser from "../../fakeData/users/currentUser";
 
 function Profile() {
   return (
     <Container maxWidth="lg">
       <Grid container spacing={7}>
         <Grid container item xs={12} md={4} lg={4}>
-          {/* <ShortIntroduction user={currentUser} isSelf={true} /> */}
+          <ShortIntroduction user={currentUser} isSelf={true} />
         </Grid>
         <Grid container item xs={12} md={8} lg={8}>
-          {/* <DetailedInformation user={currentUser} /> */}
+          <DetailedInformation user={currentUser} />
         </Grid>
       </Grid>
     </Container>

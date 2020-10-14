@@ -1,7 +1,10 @@
 import ProgrammingLanguages from "../programmingLanguages";
+import UserAuth from "./auth";
 
 interface User {
+  accountName: string;
   name: string;
+  auth: UserAuth;
   mediaSrc: {
     avatar: string;
   };

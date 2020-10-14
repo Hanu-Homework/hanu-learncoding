@@ -1,29 +1,36 @@
-import { Container, Grid } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import React, { Dispatch } from "react";
 import { connect, ConnectedProps } from "react-redux";
+import { Switch, useRouteMatch } from "react-router-dom";
+import ProtectedRoute from "../../Helpers/ProtectedRoute";
 import { RootState } from "../../redux/reducers";
-import CompeteHistory from "./CompeteHistory";
-import LeaderBoard from "./LeaderBoard";
+import CompeteBattle from "./Battle/Battle";
+import CompeteDashboard from "./Dashboard/Dashboard";
 
 type Props = PropsFromRedux & {};
 
-const Compete: React.FC<Props> = ({}) => {
+const Compete: React.FC<Props> = ({ isLoggedIn }) => {
+  const match = useRouteMatch();
   return (
     <Container>
-      <Grid container spacing={3}>
-        <Grid container item xs={12} md={12} lg={8}>
-          <CompeteHistory />
-        </Grid>
-        <Grid container item xs={12} md={12} lg={4}>
-          <LeaderBoard />
-        </Grid>
-      </Grid>
+      <Switch>
+        <ProtectedRoute
+          component={() => <CompeteBattle />}
+          path={`${match.path}/:languageID`}
+        />
+        <ProtectedRoute
+          component={() => <CompeteDashboard />}
+          path={`${match.path}`}
+        />
+      </Switch>
     </Container>
   );
 };
 
 const mapStateToProps = (state: RootState) => {
-  return {};
+  return {
+    isLoggedIn: state.user.isLoggedIn,
+  };
 };
 const mapDispatchToProps = (dispatch: Dispatch<any>) => {
   return {};

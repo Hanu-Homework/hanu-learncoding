@@ -2,7 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import routeTree from "./Routes";
 import ResponsiveAppBar from "./CommonComponents/AppBar/AppBar";
-import ControlledRoute from "./Helpers/CotrolledRoute";
+import ControlledRoute from "./Helpers/ControlledRoute";
 import { RootState } from "./redux/reducers";
 import { connect, ConnectedProps } from "react-redux";
 import CustomDrawer from "./CommonComponents/AppBar/Drawer";
