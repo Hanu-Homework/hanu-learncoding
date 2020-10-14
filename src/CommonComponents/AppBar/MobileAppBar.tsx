@@ -29,7 +29,7 @@ const MobileAppBar: React.FC<Props> = ({ isDrawerOpened, setDrawerOpened }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="transparent" elevation={0}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -43,9 +43,7 @@ const MobileAppBar: React.FC<Props> = ({ isDrawerOpened, setDrawerOpened }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Endeavor
-          </Typography>
+          <Typography variant="h6" className={classes.title}></Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

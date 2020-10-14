@@ -1,12 +1,12 @@
 import React from "react";
 import Discuss from "./Views/Discuss/Discuss";
-import TopLearners from "./Views/TopLearner/TopLearner";
 import Blog from "./Views/Blog/Blog";
-import SignUp from "./Views/NewUser/Signup";
-import SignIn from "./Views/NewUser/SignIn";
-import Home from "./Views/Home";
+import SignUp from "./Views/Auth/Signup";
+import SignIn from "./Views/Auth/SignIn";
+import Home from "./Views/Home/Home";
 import Profile from "./Views/Profile/Profile";
-import Courses from "./Views/Courses/Courses";
+import Courses from "./Views/Course/Courses";
+import Compete from "./Views/Compete/Compete";
 
 interface IRoute {
   parentPath?: string;
@@ -57,7 +57,7 @@ const routeTree: IRouteTree = {
       parentPath: "/",
       name: "Compete",
       path: "/compete",
-      component: () => <div></div>,
+      component: () => <Compete />,
       isProtected: true,
       media: {
         icon: "",
@@ -68,16 +68,6 @@ const routeTree: IRouteTree = {
       name: "Discuss",
       path: "/discuss",
       component: () => <Discuss />,
-      isProtected: true,
-      media: {
-        icon: "",
-      },
-    },
-    {
-      parentPath: "/",
-      name: "Top Learners",
-      path: "/leaderboard",
-      component: () => <TopLearners />,
       isProtected: true,
       media: {
         icon: "",

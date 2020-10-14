@@ -1,15 +1,16 @@
-import { Box, Container } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
-import ThreeCoursesPreview from "../CommonComponents/Course/ThreeCoursesPreview";
-import { RootState } from "../redux/reducers";
+import ThreeCoursesPreview from "../../CommonComponents/Course/ThreeCoursesPreview";
+import { RootState } from "../../redux/reducers";
+import HeroHeader from "./HeroSection";
 
 type Props = PropsFromRedux & {};
 
 const Home: React.FC<Props> = ({ isLoggedIn }) => {
   return (
     <Container maxWidth="lg">
-      <Box mb={5} />
+      <HeroHeader />
       <ThreeCoursesPreview />
     </Container>
   );

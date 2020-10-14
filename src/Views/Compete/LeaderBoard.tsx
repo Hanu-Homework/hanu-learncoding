@@ -8,15 +8,13 @@ type Props = PropsFromRedux & {};
 const LeaderBoardCard: React.FC<Props> = () => {
   return (
     <Fragment>
-      <Typography
-        variant="h4"
-        style={{ textAlign: "center", marginBottom: "25px" }}
-      >
-        Leaderboard
-      </Typography>
-
-      <Paper style={{ borderRadius: 16, padding: "25px" }}>
-        LeaderBoardCard
+      <Paper style={{ borderRadius: 16, padding: "25px", width: "100%" }}>
+        <Typography
+          variant="h6"
+          style={{ textAlign: "center", marginBottom: "25px" }}
+        >
+          Leaderboard
+        </Typography>
       </Paper>
     </Fragment>
   );

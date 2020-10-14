@@ -5,7 +5,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  isLoggedIn: false,
+  isLoggedIn: true,
 };
 
 type Actions = { type: typeof SET_AUTHENTICATED; isAuthenticated: boolean };
